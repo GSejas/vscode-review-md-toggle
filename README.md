@@ -3,7 +3,7 @@
 A simple VS Code extension that provides a status bar button to toggle auto-preview mode for markdown files.
 
 <!-- 🎬 Demo GIF Placeholder -->
-![Extension Demo](./assets/gifs/toggle-demo.gif)
+![Extension Demo](./assets\gifs\demo.mp4)
 > *Quick demo showing the toggle functionality in action*
 
 ## Features
