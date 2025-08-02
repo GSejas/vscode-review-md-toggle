@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Auto Preview Toggle - VS Code Extension</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="A simple VS Code extension that provides a status bar button to toggle auto-preview mode for markdown files.">
+    <meta name="keywords" content="vscode, extension, markdown, preview, toggle, status bar">
+    <meta name="author" content="GSejas">
+    
+    <!-- Open Graph metadata for social sharing -->
+    <meta property="og:title" content="Markdown Auto Preview Toggle - VS Code Extension">
+    <meta property="og:description" content="Toggle markdown auto-preview with a simple status bar button">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gsejas.github.io/vscode-review-md-toggle/">
+    
+    <!-- GitHub Pages SEO -->
+    <link rel="canonical" href="https://gsejas.github.io/vscode-review-md-toggle/">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <span class="icon">👁️</span>
+                    <h1>Markdown Auto Preview Toggle</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#usage">Usage</a></li>
+                    <li><a href="#releases">Releases</a></li>
+                    <li><a href="#contributing">Contributing</a></li>
+                    <li><a href="https://github.com/GSejas/vscode-review-md-toggle" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Simple Markdown Preview Toggle</h2>
+                    <p class="subtitle">A lightweight VS Code extension that adds a status bar button to toggle auto-preview mode for markdown files.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="https://marketplace.visualstudio.com/items?itemName=local-dev.markdown-auto-preview-toggle" 
+                           class="btn btn-primary" target="_blank">
+                            📦 Install from Marketplace
+                        </a>
+                        <a href="https://github.com/GSejas/vscode-review-md-toggle/releases/latest" 
+                           class="btn btn-secondary" target="_blank">
+                            ⬇️ Download VSIX
+                        </a>
+                    </div>
+
+                    <div class="demo-section">
+                        <h3>🎬 Demo</h3>
+                        <div class="demo-placeholder">
+                            <!-- Placeholder for demo GIF/video -->
+                            <div class="demo-box">
+                                <p>📹 Demo GIF Coming Soon</p>
+                                <p>Shows status bar toggle in action</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2>✨ Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">👁️</div>
+                        <h3>Status Bar Toggle</h3>
+                        <p>Convenient button in the status bar to quickly toggle markdown auto-preview mode.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Visual Indicators</h3>
+                        <p>Clear icons and colors show the current state:
+                        <br>👁️ (enabled) vs 👁️‍🗨️ (disabled)</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>Global Settings</h3>
+                        <p>Changes are applied globally using VS Code's workbench.editorAssociations setting.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Fast & Lightweight</h3>
+                        <p>Activates in under 100ms with minimal memory footprint (&lt;50KB bundle).</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Auto Detection</h3>
+                        <p>Automatically detects current state on startup and updates the UI accordingly.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3>Cross-Platform</h3>
+                        <p>Works seamlessly on Windows, macOS, and Linux with VS Code 1.102.0+.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installation Section -->
+        <section id="installation" class="installation">
+            <div class="container">
+                <h2>📦 Installation</h2>
+                
+                <div class="install-methods">
+                    <div class="install-card">
+                        <h3>Method 1: VS Code Marketplace</h3>
+                        <p>The easiest way to install:</p>
+                        <ol>
+                            <li>Open VS Code</li>
+                            <li>Go to Extensions (Ctrl+Shift+X)</li>
+                            <li>Search for "Markdown Auto Preview Toggle"</li>
+                            <li>Click Install</li>
+                        </ol>
+                        <a href="https://marketplace.visualstudio.com/items?itemName=local-dev.markdown-auto-preview-toggle" 
+                           class="btn btn-primary" target="_blank">
+                            🏪 Open in Marketplace
+                        </a>
+                    </div>
+                    
+                    <div class="install-card">
+                        <h3>Method 2: VSIX File</h3>
+                        <p>Manual installation from release:</p>
+                        <ol>
+                            <li>Download the latest .vsix file from releases</li>
+                            <li>Open VS Code</li>
+                            <li>Run command: <code>Extensions: Install from VSIX...</code></li>
+                            <li>Select the downloaded file</li>
+                        </ol>
+                        <a href="#releases" class="btn btn-secondary">📋 View Releases</a>
+                    </div>
+                    
+                    <div class="install-card">
+                        <h3>Method 3: Command Line</h3>
+                        <p>Install via VS Code CLI:</p>
+                        <pre><code>code --install-extension local-dev.markdown-auto-preview-toggle</code></pre>
+                        <p>Or with VSIX file:</p>
+                        <pre><code>code --install-extension path/to/markdown-auto-preview-toggle-v0.0.2.vsix</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Section -->
+        <section id="usage" class="usage">
+            <div class="container">
+                <h2>🎯 Usage</h2>
+                
+                <div class="usage-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Find the Toggle Button</h3>
+                            <p>Look for the eye icon in the status bar (bottom right of VS Code)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Click to Toggle</h3>
+                            <p>Click the button to toggle between auto-preview enabled/disabled</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Visual Feedback</h3>
+                            <p>The icon and background will update to reflect the current state</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Confirmation</h3>
+                            <p>A notification will confirm the change</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="how-it-works">
+                    <h3>🔧 How It Works</h3>
+                    <p>The extension toggles the <code>workbench.editorAssociations</code> setting for <code>*.md</code> files:</p>
+                    <ul>
+                        <li><strong>Enabled:</strong> <code>"*.md": "vscode.markdown.preview.editor"</code> - Markdown files open in preview mode by default</li>
+                        <li><strong>Disabled:</strong> No association (removed) - Markdown files open in the editor normally</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Releases Section -->
+        <section id="releases" class="releases">
+            <div class="container">
+                <h2>🏷️ Releases</h2>
+                <p>Download the latest version or browse release history:</p>
+                
+                <div id="releases-container">
+                    <!-- Releases will be dynamically loaded here -->
+                    <div class="loading">Loading releases...</div>
+                </div>
+                
+                <div class="release-notes-link">
+                    <a href="https://github.com/GSejas/vscode-review-md-toggle/releases" 
+                       class="btn btn-outline" target="_blank">
+                        📜 View All Releases on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contributing Section -->
+        <section id="contributing" class="contributing">
+            <div class="container">
+                <h2>🤝 Contributing</h2>
+                
+                <div class="contributing-grid">
+                    <div class="contrib-card">
+                        <h3>🐛 Report Issues</h3>
+                        <p>Found a bug or have a feature request?</p>
+                        <a href="https://github.com/GSejas/vscode-review-md-toggle/issues/new" 
+                           class="btn btn-outline" target="_blank">
+                            Create Issue
+                        </a>
+                    </div>
+                    
+                    <div class="contrib-card">
+                        <h3>💻 Development</h3>
+                        <p>Want to contribute code?</p>
+                        <a href="https://github.com/GSejas/vscode-review-md-toggle/blob/master/CONTRIBUTING.md" 
+                           class="btn btn-outline" target="_blank">
+                            Contributing Guide
+                        </a>
+                    </div>
+                    
+                    <div class="contrib-card">
+                        <h3>📚 Documentation</h3>
+                        <p>Help improve the docs?</p>
+                        <a href="https://github.com/GSejas/vscode-review-md-toggle/blob/master/DEVELOPER.md" 
+                           class="btn btn-outline" target="_blank">
+                            Developer Guide
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h3>🛠️ Tech Stack</h3>
+                    <div class="tech-badges">
+                        <span class="badge">TypeScript</span>
+                        <span class="badge">VS Code API</span>
+                        <span class="badge">ESBuild</span>
+                        <span class="badge">GitHub Actions</span>
+                        <span class="badge">Mocha</span>
+                        <span class="badge">ESLint</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://github.com/GSejas/vscode-review-md-toggle" target="_blank">GitHub</a>
+                    <a href="https://marketplace.visualstudio.com/items?itemName=local-dev.markdown-auto-preview-toggle" target="_blank">Marketplace</a>
+                    <a href="https://github.com/GSejas/vscode-review-md-toggle/issues" target="_blank">Issues</a>
+                    <a href="https://github.com/GSejas/vscode-review-md-toggle/blob/master/LICENSE" target="_blank">License</a>
+                </div>
+                
+                <div class="footer-info">
+                    <p>&copy; 2025 GSejas. Licensed under MIT.</p>
+                    <p>Built with ❤️ for the VS Code community</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
