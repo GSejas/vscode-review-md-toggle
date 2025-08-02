@@ -64,6 +64,17 @@ jobs:
         path: |
           out/
           .vscode-test/
+          
+    # 📸 Upload Visual Documentation Screenshots
+    - name: Upload screenshots and visual artifacts
+      uses: actions/upload-artifact@v4
+      if: always()  # Upload screenshots regardless of test outcome
+      with:
+        name: visual-documentation-${{ matrix.os }}-${{ matrix.node-version }}
+        path: |
+          assets/screenshots/test-results/
+          assets/screenshots/regression/
+        retention-days: 30
 
   security:
     name: Security Audit

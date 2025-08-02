@@ -2,6 +2,10 @@
 
 A simple VS Code extension that provides a status bar button to toggle auto-preview mode for markdown files.
 
+<!-- 🎬 Demo GIF Placeholder -->
+![Extension Demo](./assets/gifs/toggle-demo.gif)
+> *Quick demo showing the toggle functionality in action*
+
 ## Features
 
 - **Status Bar Toggle**: A convenient button in the status bar to quickly toggle markdown auto-preview
@@ -11,6 +15,20 @@ A simple VS Code extension that provides a status bar button to toggle auto-prev
 - **Global Setting**: Changes are applied globally using VS Code's `workbench.editorAssociations` setting
 - **Automatic State Detection**: The extension detects the current state on startup and updates accordingly
 
+<!-- 📸 Visual State Comparison -->
+<table>
+<tr>
+<td align="center">
+<strong>Auto-Preview Enabled</strong><br>
+<img src="./assets/images/status-bar-enabled.png" alt="Status bar with auto-preview enabled" width="300">
+</td>
+<td align="center">
+<strong>Auto-Preview Disabled</strong><br>
+<img src="./assets/images/status-bar-disabled.png" alt="Status bar with auto-preview disabled" width="300">
+</td>
+</tr>
+</table>
+
 ## How It Works
 
 The extension toggles the `workbench.editorAssociations` setting for `*.md` files between:
@@ -19,10 +37,21 @@ The extension toggles the `workbench.editorAssociations` setting for `*.md` file
 
 ## Usage
 
+<!-- 🎥 Installation GIF Placeholder -->
+### Installation
+![Installation Demo](./assets/gifs/installation-demo.gif)
+
+### Quick Start
 1. Look for the eye icon in the status bar (bottom right)
 2. Click the button to toggle between auto-preview enabled/disabled
 3. The icon and background will update to reflect the current state
 4. A notification will confirm the change
+
+<!-- 📷 Command Palette Usage -->
+### Alternative: Command Palette
+![Command Palette Usage](./assets/images/command-palette.png)
+
+You can also use the command palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and search for "Toggle Markdown Auto Preview".
 
 ## Development
 
@@ -54,16 +83,6 @@ Initial release with basic toggle functionality:
 - Visual state indicators
 - Global setting management
 - Automatic state detection
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
 
 ---
 

@@ -60,11 +60,32 @@
 
                     <div class="demo-section">
                         <h3>🎬 Demo</h3>
-                        <div class="demo-placeholder">
-                            <!-- Placeholder for demo GIF/video -->
-                            <div class="demo-box">
-                                <p>📹 Demo GIF Coming Soon</p>
-                                <p>Shows status bar toggle in action</p>
+                        <div class="demo-container">
+                            <!-- Interactive demo placeholder -->
+                            <div class="demo-showcase">
+                                <img src="./assets/toggle-demo.gif" alt="Extension Demo" class="demo-gif" loading="lazy" 
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <div class="demo-fallback" style="display:none;">
+                                    <div class="demo-box">
+                                        <p>📹 Interactive Demo</p>
+                                        <p>Status bar toggle demonstration</p>
+                                        <small>GIF loading or not yet available</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Visual state comparison -->
+                            <div class="state-comparison">
+                                <div class="state-item">
+                                    <h4>🟢 Auto-Preview Enabled</h4>
+                                    <img src="./assets/status-bar-enabled.png" alt="Enabled state" class="state-img"
+                                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjUwIiB2aWV3Qm94PSIwIDAgMzAwIDUwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNTAiIGZpbGw9IiNmNmY4ZmEiLz48dGV4dCB4PSIxNTAiIHk9IjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2NjY2NjYiPkVuYWJsZWQgU3RhdGU8L3RleHQ+PC9zdmc+'">
+                                </div>
+                                <div class="state-item">
+                                    <h4>🔴 Auto-Preview Disabled</h4>
+                                    <img src="./assets/status-bar-disabled.png" alt="Disabled state" class="state-img"
+                                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjUwIiB2aWV3Qm94PSIwIDAgMzAwIDUwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNTAiIGZpbGw9IiNmNmY4ZmEiLz48dGV4dCB4PSIxNTAiIHk9IjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2NjY2NjYiPkRpc2FibGVkIFN0YXRlPC90ZXh0Pjwvc3ZnPg=='">
+                                </div>
                             </div>
                         </div>
                     </div>

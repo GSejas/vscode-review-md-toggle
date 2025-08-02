@@ -7,12 +7,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/vscode-review-md-toggle.git"
+    "url": "https://github.com/gsejas/vscode-review-md-toggle.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/vscode-review-md-toggle/issues"
+    "url": "https://github.com/gsejas/vscode-review-md-toggle/issues"
   },
-  "homepage": "https://github.com/yourusername/vscode-review-md-toggle#readme",
+  "homepage": "https://github.com/gsejas/vscode-review-md-toggle#readme",
   "keywords": [
     "markdown",
     "preview",
@@ -52,7 +52,11 @@
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "check-types": "tsc --noEmit",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "docs:screenshots": "node scripts/capture-screenshots.js",
+    "docs:placeholders": "npm run docs:screenshots",
+    "docs:validate": "node scripts/validate-assets.js",
+    "test:visual": "npm run compile-tests && npm run compile && vscode-test --grep 'Visual Documentation'"
   },
   "devDependencies": {
     "@types/vscode": "^1.102.0",

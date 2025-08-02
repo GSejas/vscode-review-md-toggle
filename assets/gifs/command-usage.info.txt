@@ -1,0 +1,17 @@
+GIF Placeholder: command-usage.gif
+
+Recommended specifications:
+- Duration: 3-5 seconds
+- Frame rate: 10-15 fps
+- Resolution: 800x600 or 1920x1080
+- File size: < 5MB for GitHub
+- Format: Optimized GIF or WebP
+
+To create this GIF:
+1. Use screen recording software (OBS, ScreenToGif, etc.)
+2. Record the extension functionality
+3. Optimize with tools like gifski or online compressors
+4. Replace this file with the actual GIF
+
+Content should show:
+- Command palette usage and execution
