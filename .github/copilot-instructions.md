@@ -19,3 +19,25 @@ Add placeholders for visual docvumentation, gifs, possible images or veideos we 
 - Use VS Code Configuration API for settings management
 - Use StatusBarItem for the toggle button
 - Maintain state awareness for the toggle status
+
+## Development Lessons Learned
+- **Configuration Objects**: Always create clean copies before manipulation to avoid proxy issues in bundled environments
+- **Test Strategy**: Focus on command execution testing rather than configuration state verification in test environments
+- **Performance**: Keep activation minimal (<100ms) and dispose of resources properly
+- **Error Handling**: Wrap all VS Code API calls in try-catch blocks for graceful failure
+- **Bundle Optimization**: Monitor bundle size (<50KB) and exclude 'vscode' from bundling
+- **Async Patterns**: Allow time for configuration updates to propagate (200ms delays in tests)
+
+## Architecture Patterns
+- Single responsibility functions for better testability
+- Proper subscription management for memory leak prevention
+- Clean separation between UI (status bar) and logic (configuration management)
+- Defensive programming for edge cases (empty configs, rapid toggles)
+
+## Visual Documentation Placeholders
+- **Demo GIF**: Status bar toggle operation showing before/after states
+- **Installation Video**: Step-by-step marketplace installation guide
+- **Configuration Screenshot**: Settings panel showing the toggled association
+- **Architecture Diagram**: Component interaction flow (Status Bar → Command → Config → Notification)
+- **Compatibility Matrix**: Supported VS Code versions and platforms
+- **Performance Metrics**: Activation time and memory usage charts
