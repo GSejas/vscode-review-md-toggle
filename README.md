@@ -51,7 +51,7 @@ The extension toggles the `workbench.editorAssociations` setting for `*.md` file
 **Option 2: Direct Link**
 [![Install from Marketplace](https://img.shields.io/badge/Install-VS%20Code%20Marketplace-blue?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=GSejas.markdown-auto-preview-toggle)
 
-![Installation Demo](./assets/gifs/installation-demo.gif)
+<!-- ![Installation Demo](./assets/gifs/installation-demo.gif) -->
 
 ### Quick Start
 1. Look for the eye icon in the status bar (bottom right)
@@ -61,7 +61,7 @@ The extension toggles the `workbench.editorAssociations` setting for `*.md` file
 
 <!-- 📷 Command Palette Usage -->
 ### Alternative: Command Palette
-![Command Palette Usage](./assets/images/command-palette.png)
+![Command Palette Usage](./assets/images/command-palette.info.png)
 
 You can also use the command palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and search for "Toggle Markdown Auto Preview".
 
@@ -85,6 +85,21 @@ This extension modifies the following VS Code setting:
 ## Commands
 
 - `markdown-auto-preview-toggle.toggle`: Toggle Markdown Auto Preview
+
+## Troubleshooting:
+
+1. Why do I click and it doesn't update the preview
+> Verify that the settings.json for the workspace doesn't contain the following settings:
+
+```json
+{
+     "workbench.editorAssociations": {
+    "*.md": "vscode.markdown.preview.editor"
+  },
+}
+```
+
+If present, delete them.
 
 ## Release Notes
 
