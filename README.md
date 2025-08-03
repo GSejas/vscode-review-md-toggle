@@ -2,6 +2,8 @@
 
 A simple VS Code extension that provides a status bar button to toggle auto-preview mode for markdown files.
 
+[![Install from VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/GSejas.markdown-auto-preview-toggle?style=for-the-badge&logo=visual-studio-code&logoColor=white&label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=GSejas.markdown-auto-preview-toggle)
+
 <!-- 🎬 Demo GIF -->
 ![Extension Demo](./assets/gifs/demo.gif)
 > *Quick demo showing the toggle functionality in action*
@@ -39,6 +41,16 @@ The extension toggles the `workbench.editorAssociations` setting for `*.md` file
 
 <!-- 🎥 Installation GIF Placeholder -->
 ### Installation
+
+**Option 1: VS Code Marketplace** (Recommended)
+1. Open VS Code
+2. Go to Extensions (Ctrl+Shift+X)
+3. Search for "Markdown Auto Preview Toggle"
+4. Click Install
+
+**Option 2: Direct Link**
+[![Install from Marketplace](https://img.shields.io/badge/Install-VS%20Code%20Marketplace-blue?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=GSejas.markdown-auto-preview-toggle)
+
 ![Installation Demo](./assets/gifs/installation-demo.gif)
 
 ### Quick Start
