@@ -1,6 +1,0 @@
-Placeholder for: > Toggle Markdown Auto Preview
-Dimensions: 600x300
-Colors: #1e1e1e / #cccccc
-
-To convert SVG to PNG, use:
-npx svg2png-cli C:\Users\delir\Documents\repos\vscode-review-md-toggle\assets\images\command-palette.svg --output C:\Users\delir\Documents\repos\vscode-review-md-toggle\assets\images\command-palette.png
