@@ -29,7 +29,7 @@ suite('Markdown Auto Preview Toggle Extension Tests', () => {
 	});
 
 	test('Extension should be present and activated', async () => {
-		const extension = vscode.extensions.getExtension('local-dev.markdown-auto-preview-toggle');
+		const extension = vscode.extensions.getExtension('GSejas.markdown-auto-preview-toggle');
 		assert.ok(extension, 'Extension should be present');
 		
 		if (!extension.isActive) {

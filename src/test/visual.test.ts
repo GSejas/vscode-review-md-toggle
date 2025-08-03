@@ -99,7 +99,7 @@ suite('Visual Documentation Tests', () => {
 	});
 
 	test('📸 Capture Initial Extension State', async () => {
-		const extension = vscode.extensions.getExtension('local-dev.markdown-auto-preview-toggle');
+		const extension = vscode.extensions.getExtension('GSejas.markdown-auto-preview-toggle');
 		assert.ok(extension, 'Extension should be present');
 		
 		if (!extension.isActive) {
@@ -177,7 +177,7 @@ suite('Visual Documentation Tests', () => {
 			vscodeVersion: vscode.version,
 			nodeVersion: process.version,
 			testTimestamp: new Date().toISOString(),
-			extensionId: 'local-dev.markdown-auto-preview-toggle'
+			extensionId: 'GSejas.markdown-auto-preview-toggle'
 		};
 
 		const metadataPath = path.join(

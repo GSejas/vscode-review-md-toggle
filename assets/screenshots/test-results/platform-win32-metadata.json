@@ -1,0 +1,8 @@
+{
+  "platform": "win32",
+  "arch": "x64",
+  "vscodeVersion": "1.102.3",
+  "nodeVersion": "v22.15.1",
+  "testTimestamp": "2025-08-02T23:56:26.063Z",
+  "extensionId": "GSejas.markdown-auto-preview-toggle"
+}

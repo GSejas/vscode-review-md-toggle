@@ -5,7 +5,7 @@ import * as vscode from 'vscode';
 suite('Performance and Edge Cases', () => {
 	
 	test('Extension activation should be fast', async () => {
-		const extension = vscode.extensions.getExtension('local-dev.markdown-auto-preview-toggle');
+		const extension = vscode.extensions.getExtension('GSejas.markdown-auto-preview-toggle');
 		assert.ok(extension, 'Extension should exist');
 		
 		const startTime = Date.now();

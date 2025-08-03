@@ -6,7 +6,7 @@ suite('Status Bar Integration Tests', () => {
 	
 	test('Status bar item should be created and visible', async () => {
 		// Extension should be activated
-		const extension = vscode.extensions.getExtension('local-dev.markdown-auto-preview-toggle');
+		const extension = vscode.extensions.getExtension('GSejas.markdown-auto-preview-toggle');
 		assert.ok(extension, 'Extension should exist');
 		
 		if (!extension.isActive) {
