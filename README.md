@@ -2,8 +2,9 @@
 
 A simple VS Code extension that provides a status bar button to toggle auto-preview mode for markdown files.
 
-<!-- 🎬 Demo GIF Placeholder -->
-![Extension Demo](./assets\gifs\demo.mp4)
+<!-- 🎬 Demo Video -->
+> **📹 [View Demo Video](./assets/gifs/demo.mp4)**
+> 
 > *Quick demo showing the toggle functionality in action*
 
 ## Features
@@ -20,11 +21,11 @@ A simple VS Code extension that provides a status bar button to toggle auto-prev
 <tr>
 <td align="center">
 <strong>Auto-Preview Enabled</strong><br>
-<img src="./assets/images/status-bar-enabled.png" alt="Status bar with auto-preview enabled" width="300">
+<img src="./assets/images/preview-enabled.png" alt="Status bar with auto-preview enabled" width="300">
 </td>
 <td align="center">
 <strong>Auto-Preview Disabled</strong><br>
-<img src="./assets/images/status-bar-disabled.png" alt="Status bar with auto-preview disabled" width="300">
+<img src="./assets/images/preview-disabled.png" alt="Status bar with auto-preview disabled" width="300">
 </td>
 </tr>
 </table>
