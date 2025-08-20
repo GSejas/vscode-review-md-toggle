@@ -26,6 +26,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Fixed
 - Improve status bar tooltip content for clearer UX and direct action links
 
+## [1.0.3] - 2025-08-20
+
+### Changed
+- Prepare release v1.0.3: bump version, commit changelog, and package verification
+
 
 ## [0.0.1] - 2025-08-02
 
