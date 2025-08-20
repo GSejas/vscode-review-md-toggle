@@ -2,7 +2,7 @@
   "name": "markdown-auto-preview-toggle",
   "displayName": "Markdown Auto Preview Toggle",
   "description": "Toggle auto-preview for markdown files with a status bar button",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "GSejas",
   "license": "MIT",
   "repository": {
@@ -37,6 +37,15 @@
         "command": "markdown-auto-preview-toggle.toggle",
         "title": "Toggle Markdown Auto Preview",
         "category": "Markdown"
+      }
+    ]
+    ,
+    "keybindings": [
+      {
+        "command": "markdown-auto-preview-toggle.toggle",
+        "key": "ctrl+shift+m",
+        "mac": "cmd+shift+m",
+        "when": "editorTextFocus && resourceExtname == .md"
       }
     ]
   },

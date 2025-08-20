@@ -6,10 +6,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Changed
+- (none yet)
+
+### Fixed
+- (none yet)
+
+
 ### Planned
 - Keyboard shortcut for toggle command
 - Configuration option for custom status bar position
 - Support for workspace-specific settings
+
+## [1.0.2] - 2025-08-20
+
+### Changed
+- Bumped version to 1.0.2; documentation and UX tooltip improvements
+
+### Fixed
+- Improve status bar tooltip content for clearer UX and direct action links
+
 
 ## [0.0.1] - 2025-08-02
 
