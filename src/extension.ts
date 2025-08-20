@@ -16,7 +16,8 @@ export function activate(context: vscode.ExtensionContext) {
 	statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
 	statusBarItem.command = 'markdown-auto-preview-toggle.toggle';
 	statusBarItem.name = 'Markdown Auto Preview Toggle';
-	statusBarItem.tooltip = 'Toggle Markdown Auto Preview';
+	// Tooltip is set dynamically in updateStatusBarItem so it reflects current state,
+	// available action, and links to documentation for product/UX clarity.
 	
 	// Update the status bar item text based on current setting
 	updateStatusBarItem();
@@ -75,11 +76,27 @@ function updateStatusBarItem() {
 	const isAutoPreviewEnabled = currentAssociations['*.md'] === 'vscode.markdown.preview.editor';
 	
 	if (isAutoPreviewEnabled) {
-		statusBarItem.text = '$(eye) MD Preview';
+		statusBarItem.text = '$(eye)';
 		statusBarItem.backgroundColor = new vscode.ThemeColor('statusBarItem.prominentBackground');
+		// Rich tooltip for enabled state
+		const md = new vscode.MarkdownString();
+		md.isTrusted = true; // allow command links
+		md.appendMarkdown('**Markdown Auto-Preview — Enabled**\n\n');
+		md.appendMarkdown('When enabled, Markdown files open directly in the Preview editor by default. This makes it faster to review rendered content.\n\n');
+		md.appendMarkdown('**Action:** [Toggle auto-preview](command:markdown-auto-preview-toggle.toggle)\n\n');
+		md.appendMarkdown('**Docs:** [Extension README](https://github.com/GSejas/vscode-review-md-toggle#readme)');
+		statusBarItem.tooltip = md;
 	} else {
-		statusBarItem.text = '$(eye-closed) MD Preview';
+		statusBarItem.text = '$(eye-closed)';
 		statusBarItem.backgroundColor = undefined;
+		// Rich tooltip for disabled state
+		const md = new vscode.MarkdownString();
+		md.isTrusted = true; // allow command links
+		md.appendMarkdown('**Markdown Auto-Preview — Disabled**\n\n');
+		md.appendMarkdown('When disabled, Markdown files open in the default editor. Toggle to enable preview-on-open for faster content review.\n\n');
+		md.appendMarkdown('**Action:** [Enable auto-preview](command:markdown-auto-preview-toggle.toggle)\n\n');
+		md.appendMarkdown('**Docs:** [Extension README](https://github.com/GSejas/vscode-review-md-toggle#readme)');
+		statusBarItem.tooltip = md;
 	}
 }
 

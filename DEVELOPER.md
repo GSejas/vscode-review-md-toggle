@@ -154,7 +154,7 @@ vsce package
 ### Marketplace Publishing
 ```bash
 # Login to Azure DevOps
-vsce login <publisher>
+vsce login GSejas
 
 # Publish to marketplace
 vsce publish
