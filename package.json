@@ -1,8 +1,8 @@
 {
   "name": "markdown-auto-preview-toggle",
   "displayName": "Markdown Auto Preview Toggle",
-  "description": "Toggle auto-preview for markdown files with a status bar button",
-  "version": "1.0.5",
+  "description": "One-click markdown preview toggle. Zero configuration required. Save time with instant status bar access to markdown view modes.",
+  "version": "1.0.6",
   "publisher": "GSejas",
   "icon": "assets/icons128s128/6.png",
   "license": "MIT",
