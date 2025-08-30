@@ -2,7 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(git tag:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(npm run compile:*)",
+      "Bash(npm test)",
+      "Bash(npm run package:*)",
+      "Bash(dir:*)",
+      "Bash(vsce package:*)",
+      "Bash(vsce publish:*)",
+      "Bash(node:*)"
     ],
     "deny": []
   }

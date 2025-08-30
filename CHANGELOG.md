@@ -6,17 +6,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Planned
+- Workspace-specific toggle settings
+- Additional file type support
+- Custom keyboard shortcuts configuration
+- Settings UI integration
+
+## [1.0.4] - 2025-08-30
+
+### Added
+- 🎨 **Professional banner design** with SVG graphics
+- ⌨️ **Keyboard shortcuts**: Ctrl+Shift+M (Windows/Linux) / Cmd+Shift+M (macOS)
+- 📚 **Enhanced documentation** with visual banner
+- 🔧 **Banner generation script** for consistent branding
+
 ### Changed
-- (none yet)
+- Updated README with professional banner display
+- Enhanced visual presentation across documentation
+- Improved project branding and visual identity
+
+### Technical
+- Added banner creation automation script
+- Improved documentation structure and presentation
+- Enhanced visual documentation assets
+
+## [1.0.3] - 2025-08-20
+
+### Changed
+- Prepare release v1.0.3: bump version, commit changelog, and package verification
+- Enhanced project structure and build process
 
 ### Fixed
-- (none yet)
-
-
-### Planned
-- Keyboard shortcut for toggle command
-- Configuration option for custom status bar position
-- Support for workspace-specific settings
+- Package verification and release preparation improvements
 
 ## [1.0.2] - 2025-08-20
 
@@ -26,13 +47,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Fixed
 - Improve status bar tooltip content for clearer UX and direct action links
 
-## [1.0.3] - 2025-08-20
+## [1.0.1] - 2025-08-20
 
 ### Changed
-- Prepare release v1.0.3: bump version, commit changelog, and package verification
+- Enhanced status bar item tooltips for better user clarity
+- Improved user experience with clearer action descriptions
 
-
-## [0.0.1] - 2025-08-02
+## [1.0.0] - 2025-08-02
 
 ### Added
 - ✨ **Status bar toggle button** with visual state indication
@@ -72,68 +93,35 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **Code quality tools** (ESLint, TypeScript)
 - **Performance monitoring** and benchmarks
 
-### Initial Release Scope
-This release provides the core functionality requested:
-- Simple, minimal implementation
-- Modular design for future extensibility
-- Production-ready code quality
-- Open-source preparation with documentation
-- Full test coverage for reliability
-
 ---
 
-## Release Notes
+## Installation
 
-### Installation
 ```bash
 # Install from VS Code Marketplace
-ext install local-dev.markdown-auto-preview-toggle
+ext install GSejas.markdown-auto-preview-toggle
 
-# Or download VSIX and install manually
-code --install-extension markdown-auto-preview-toggle-0.0.1.vsix
+# Or search "Markdown Auto Preview Toggle" in VS Code Extensions
 ```
 
-### Usage
-1. Look for the eye icon in the status bar (bottom right)
-2. Click to toggle between auto-preview enabled/disabled
-3. Markdown files will open in the selected mode
+## Usage
 
-### Feedback
-- 🐛 **Bug reports**: [GitHub Issues](https://github.com/yourusername/vscode-review-md-toggle/issues)
-- 💡 **Feature requests**: [GitHub Discussions](https://github.com/yourusername/vscode-review-md-toggle/discussions)
-- ⭐ **Ratings**: [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=local-dev.markdown-auto-preview-toggle)
+1. **Status Bar**: Click the eye icon in the status bar (bottom right)
+2. **Keyboard**: Press `Ctrl+Shift+M` (Windows/Linux) or `Cmd+Shift+M` (macOS)
+3. **Command Palette**: Search "Toggle Markdown Auto Preview"
 
-### Contributing
-See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and guidelines.
+## Feedback & Support
 
----
-
-## Version History Summary
-
-| Version | Date | Description | Downloads |
-|---------|------|-------------|-----------|
-| 0.0.1 | 2025-08-02 | Initial release with core toggle functionality | - |
-
-## Migration Guide
-
-### From Manual Configuration
-If you previously set `workbench.editorAssociations` manually:
-1. Install the extension
-2. The extension will detect your current setting
-3. Use the status bar button for future toggles
-
-### Settings Impact
-The extension only modifies:
-- `workbench.editorAssociations["*.md"]`
-
-All other settings remain unchanged.
+- 🐛 **Bug reports**: [GitHub Issues](https://github.com/gsejas/vscode-review-md-toggle/issues)
+- 💡 **Feature requests**: [GitHub Discussions](https://github.com/gsejas/vscode-review-md-toggle/discussions)
+- ⭐ **Ratings**: [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=GSejas.markdown-auto-preview-toggle)
 
 ## Compatibility
 
 ### VS Code Versions
 - **Minimum**: 1.102.0
-- **Tested**: 1.102.0 - 1.102.3
-- **Expected**: All future versions (API stable)
+- **Tested**: 1.102.0+
+- **Expected**: All future versions (stable API)
 
 ### Operating Systems
 - ✅ Windows 10/11
@@ -149,4 +137,4 @@ Compatible with all popular markdown extensions:
 
 ---
 
-*For detailed technical information, see [DEVELOPER.md](DEVELOPER.md)*
+*This extension follows VS Code extension best practices and is ready for production use.*
