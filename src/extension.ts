@@ -53,14 +53,21 @@ function toggleMarkdownAutoPreview() {
 	// Check if markdown auto-preview is currently enabled
 	const isAutoPreviewEnabled = editorAssociations['*.md'] === 'vscode.markdown.preview.editor';
 	
+	// Check if notifications should be shown
+	const showNotifications = config.get<boolean>('markdownAutoPreviewToggle.showNotifications', false);
+	
 	if (isAutoPreviewEnabled) {
 		// Disable auto-preview by removing the association
 		delete editorAssociations['*.md'];
-		vscode.window.showInformationMessage('Markdown auto-preview disabled');
+		if (showNotifications) {
+			vscode.window.showInformationMessage('Markdown auto-preview disabled');
+		}
 	} else {
 		// Enable auto-preview
 		editorAssociations['*.md'] = 'vscode.markdown.preview.editor';
-		vscode.window.showInformationMessage('Markdown auto-preview enabled');
+		if (showNotifications) {
+			vscode.window.showInformationMessage('Markdown auto-preview enabled');
+		}
 	}
 	
 	// Update the configuration

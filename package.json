@@ -2,7 +2,7 @@
   "name": "markdown-auto-preview-toggle",
   "displayName": "Markdown Auto Preview Toggle",
   "description": "Toggle auto-preview for markdown files with a status bar button",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "publisher": "GSejas",
   "icon": "assets/icons128s128/6.png",
   "license": "MIT",
@@ -39,8 +39,7 @@
         "title": "Toggle Markdown Auto Preview",
         "category": "Markdown"
       }
-    ]
-    ,
+    ],
     "keybindings": [
       {
         "command": "markdown-auto-preview-toggle.toggle",
@@ -48,7 +47,17 @@
         "mac": "cmd+shift+m",
         "when": "editorTextFocus && resourceExtname == .md"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Markdown Auto Preview Toggle",
+      "properties": {
+        "markdownAutoPreviewToggle.showNotifications": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show notification messages when toggling markdown auto-preview mode"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",

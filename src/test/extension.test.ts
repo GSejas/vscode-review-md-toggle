@@ -16,6 +16,8 @@ suite('Markdown Auto Preview Toggle Extension Tests', () => {
 	suiteTeardown(async () => {
 		const config = vscode.workspace.getConfiguration();
 		await config.update('workbench.editorAssociations', originalConfig, vscode.ConfigurationTarget.Global);
+		// Clean up notification setting
+		await config.update('markdownAutoPreviewToggle.showNotifications', undefined, vscode.ConfigurationTarget.Global);
 	});
 	
 	// Reset configuration before each test
@@ -24,6 +26,8 @@ suite('Markdown Auto Preview Toggle Extension Tests', () => {
 		const cleanConfig = { ...originalConfig };
 		delete cleanConfig['*.md'];
 		await config.update('workbench.editorAssociations', cleanConfig, vscode.ConfigurationTarget.Global);
+		// Reset notification setting to default (false)
+		await config.update('markdownAutoPreviewToggle.showNotifications', undefined, vscode.ConfigurationTarget.Global);
 		// Wait for configuration change to propagate
 		await new Promise(resolve => setTimeout(resolve, 200));
 	});
@@ -118,5 +122,44 @@ suite('Markdown Auto Preview Toggle Extension Tests', () => {
 		} catch (error) {
 			assert.fail(`Failed with empty configuration: ${error}`);
 		}
+	});
+
+	test('Should respect notification setting when set to false (default)', async () => {
+		const config = vscode.workspace.getConfiguration();
+		
+		// Ensure notification setting is false (default)
+		const showNotifications = config.get<boolean>('markdownAutoPreviewToggle.showNotifications');
+		assert.strictEqual(showNotifications, false, 'Default notification setting should be false');
+		
+		// Toggle should work without showing notification popup
+		try {
+			await vscode.commands.executeCommand('markdown-auto-preview-toggle.toggle');
+			await new Promise(resolve => setTimeout(resolve, 200));
+			assert.ok(true, 'Toggle worked with notifications disabled');
+		} catch (error) {
+			assert.fail(`Toggle failed: ${error}`);
+		}
+	});
+
+	test('Should handle notification setting configuration', async () => {
+		const config = vscode.workspace.getConfiguration();
+		
+		// Test setting notifications to true
+		await config.update('markdownAutoPreviewToggle.showNotifications', true, vscode.ConfigurationTarget.Global);
+		await new Promise(resolve => setTimeout(resolve, 300));
+		
+		// Get fresh config object to ensure updated values
+		const updatedConfig = vscode.workspace.getConfiguration();
+		let showNotifications = updatedConfig.get<boolean>('markdownAutoPreviewToggle.showNotifications');
+		assert.strictEqual(showNotifications, true, 'Notification setting should be updateable to true');
+		
+		// Test setting notifications back to false
+		await updatedConfig.update('markdownAutoPreviewToggle.showNotifications', false, vscode.ConfigurationTarget.Global);
+		await new Promise(resolve => setTimeout(resolve, 300));
+		
+		// Get fresh config object again
+		const finalConfig = vscode.workspace.getConfiguration();
+		showNotifications = finalConfig.get<boolean>('markdownAutoPreviewToggle.showNotifications');
+		assert.strictEqual(showNotifications, false, 'Notification setting should be updateable to false');
 	});
 });

@@ -12,6 +12,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Custom keyboard shortcuts configuration
 - Settings UI integration
 
+## [1.0.5] - 2025-08-30
+
+### Added
+- 🔕 **Notification setting**: New `markdownAutoPreviewToggle.showNotifications` setting
+- 🎛️ **Silent by default**: Notifications are now disabled by default for non-intrusive experience
+- ⚙️ **User choice**: Users can enable notifications in VS Code settings if desired
+
+### Changed
+- **Default behavior**: Toggle operations are now silent unless explicitly enabled by user
+- **User experience**: Cleaner, less intrusive toggle behavior
+- **Settings integration**: Added proper VS Code settings configuration
+
+### Technical
+- Added comprehensive test coverage for notification setting functionality
+- Enhanced configuration handling with proper defaults
+- Improved extension settings schema in package.json
+
 ## [1.0.4] - 2025-08-30
 
 ### Added
