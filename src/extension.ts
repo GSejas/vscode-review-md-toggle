@@ -76,7 +76,7 @@ function updateStatusBarItem() {
 	const isAutoPreviewEnabled = currentAssociations['*.md'] === 'vscode.markdown.preview.editor';
 	
 	if (isAutoPreviewEnabled) {
-		statusBarItem.text = '$(eye)';
+		statusBarItem.text = '$(markdown)$(eye)';
 		statusBarItem.backgroundColor = new vscode.ThemeColor('statusBarItem.prominentBackground');
 		// Rich tooltip for enabled state
 		const md = new vscode.MarkdownString();
@@ -87,7 +87,7 @@ function updateStatusBarItem() {
 		md.appendMarkdown('**Docs:** [Extension README](https://github.com/GSejas/vscode-review-md-toggle#readme)');
 		statusBarItem.tooltip = md;
 	} else {
-		statusBarItem.text = '$(eye-closed)';
+		statusBarItem.text = '$(markdown)$(eye-closed)';
 		statusBarItem.backgroundColor = undefined;
 		// Rich tooltip for disabled state
 		const md = new vscode.MarkdownString();

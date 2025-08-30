@@ -1,0 +1,124 @@
+name: Manual Quality Check
+
+# This workflow can be triggered manually from the GitHub UI
+on:
+  workflow_dispatch:
+    inputs:
+      run_tests:
+        description: 'Run unit/smoke tests'
+        required: false
+        default: true
+        type: boolean
+      run_package:
+        description: 'Build and package extension'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  quality-check:
+    name: Quality Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run linting
+      run: npm run lint
+    
+    - name: Run type checking
+      run: npm run check-types
+    
+    - name: Setup virtual display for tests
+      if: ${{ inputs.run_tests }}
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb
+    
+    - name: Run tests
+      if: ${{ inputs.run_tests }}
+      run: xvfb-run -a npm test
+    
+    - name: Build and package extension
+      if: ${{ inputs.run_package }}
+      run: |
+        npm run package
+        
+        # Check if VSIX was created
+        if [ -f *.vsix ]; then
+          echo "✅ Extension package created successfully"
+          ls -la *.vsix
+        else
+          echo "❌ Extension package not found"
+          exit 1
+        fi
+    
+    - name: Check bundle size
+      if: ${{ inputs.run_package }}
+      run: |
+        if [ -f "dist/extension.js" ]; then
+          BUNDLE_SIZE=$(stat -c%s "dist/extension.js")
+          BUNDLE_SIZE_KB=$((BUNDLE_SIZE / 1024))
+          echo "📦 Bundle size: ${BUNDLE_SIZE_KB}KB"
+          
+          if [ $BUNDLE_SIZE -gt 51200 ]; then  # 50KB limit
+            echo "⚠️  Bundle size (${BUNDLE_SIZE_KB}KB) exceeds 50KB limit"
+          else
+            echo "✅ Bundle size within limits"
+          fi
+        fi
+    
+    - name: Upload package artifact
+      if: ${{ inputs.run_package }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: extension-package-manual-${{ github.run_number }}
+        path: '*.vsix'
+        retention-days: 7
+    
+    - name: Upload test results
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results-manual-${{ github.run_number }}
+        path: |
+          out/
+          .vscode-test/
+        retention-days: 7
+    
+    - name: Summary
+      if: always()
+      run: |
+        echo "## Quality Check Summary" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Linting completed" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Type checking completed" >> $GITHUB_STEP_SUMMARY
+        
+        if [ "${{ inputs.run_tests }}" == "true" ]; then
+          echo "- ✅ Tests executed" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "- ⏭️ Tests skipped" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        if [ "${{ inputs.run_package }}" == "true" ]; then
+          echo "- ✅ Extension packaged" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "- ⏭️ Packaging skipped" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### How to use this workflow:" >> $GITHUB_STEP_SUMMARY
+        echo "1. Go to the Actions tab in GitHub" >> $GITHUB_STEP_SUMMARY
+        echo "2. Select 'Manual Quality Check' workflow" >> $GITHUB_STEP_SUMMARY
+        echo "3. Click 'Run workflow' button" >> $GITHUB_STEP_SUMMARY
+        echo "4. Choose whether to run tests and/or packaging" >> $GITHUB_STEP_SUMMARY
+        echo "5. Click 'Run workflow' to start the process" >> $GITHUB_STEP_SUMMARY

@@ -3,3 +3,6 @@ dist
 node_modules
 .vscode-test/
 *.vsix
+assets/screenshots/**
+assets/screenshots/test-results/platform-win32-metadata.json
+tutorials
